@@ -1,0 +1,123 @@
+<!-- Sitebar -->
+<style>
+  .topbar {
+    background-color: #d7efbd;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    margin-left: 10px;
+  }
+
+  .nav {
+    margin-left: auto;
+    margin-right: 10px;
+    display: flex;
+  }
+
+  .nav-item {
+    background-color: #85a171;
+    color: white;
+    font-family: 'Proxima Sans', sans-serif;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: inset -5px -5px 10px rgba(255,255,255,0.1), inset 5px 5px 10px rgba(0,0,0,0.1);
+    margin-right: 10px;
+  }
+
+  .nav-item:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-item:last-child {
+    margin-right: 0;
+  }
+
+  .pics {
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .pic {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .topbar {
+      flex-direction: column;
+      height: auto;
+      padding: 10px;
+    }
+
+    .logo {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+    }
+
+    .nav {
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+    }
+
+    .nav-item {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+    }
+
+    .nav-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .pics {
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+    }
+
+    .pic {
+      width: 80%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px; 
+   }
+    
+   .pic:last-child {
+     margin-bottom;0
+   }
+}
+</style>
+
+<div class="topbar">
+   <img src="../textures/fs.png" alt="Logo" class="logo">
+   <div class="nav">
+     <a href="https://placeholder.com" class="nav-item">Home</a>
+     <a href="https://placeholder.com" class="nav-item">Routes</a>
+     <a href="https://placeholder.com" class="nav-item">Betuwe</a>
+     <a href="https://placeholder.com" class="nav-item">Kaart & Doen</a>
+     <a href="https://placeholder.com" class="nav-item">Webshop</a>
+     <a href="https://placeholder.com" class="nav-item">About</a>
+   </div>
+   <div class="pics">
+     <img src="../textures/placeholder.png" alt="Pic1" class="pic">
+     <img src="../textures/placeholder.png" alt="Pic2" class="pic">
+     <img src="../textures/placeholder.png" alt="Pic3" class="pic">
+   </div>
+</div>
