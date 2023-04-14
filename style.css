@@ -6,3 +6,7 @@ button {
   background-color: lightblue;
   font-weight: bold;
 }
+
+img {
+  height: 100px;
+}
