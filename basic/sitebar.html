@@ -68,7 +68,7 @@
         width: 200px;
         padding: 10px;
         border-radius: 10px;
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(84, 130, 53, 0.5);
         backdrop-filter: blur(10px);
     }
 
@@ -111,6 +111,17 @@
       .nav-sublink {
           text-align: center;
       }
+        .nav-submenu {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.nav-dropdown:hover .nav-submenu {
+    opacity: 1;
+    transform: translateY(0);
+}
+
     }
 </style>
         <div style="display:flex; align-items:center;">
