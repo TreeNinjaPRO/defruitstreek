@@ -4,6 +4,7 @@
 <header style="position: fixed; top: 0; width: 100%; height: 80px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 2;">
     <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 auto; max-width: 1200px; padding: 10px;">
         <img src="../textures/fs.png" alt="Logo" style="height: 70px;">
+        <img src="../textures/siteheadermenu.png" id="mobilemenubutton" alt="Menu">
 <nav style="display: flex; flex-wrap: wrap;">
     <a href="../index.html" class="nav-link">Home</a>
     <a href="../shop/" class="nav-link">Webshop</a>
@@ -36,7 +37,74 @@
     </div>
     <a href="../meer/" class="nav-link">Over</a>
 </nav>
-
+<iframe id="mobilemenuiframe" src="../interact/mobilemenu.html" frameborder="0"></iframe>
+<style>
+    @media (max-width: 600px) {
+      /* stijlen voor kleine schermen */
+      #mobilemenubutton {
+        display: block;
+      }
+      .logo {
+        width: 400px;
+      }
+      .siteheader {
+        height: 1000px;
+      }
+      .cart, .search {
+        width: 200px;
+      }
+      #mobilemenuclose {
+        display: inline; /* toon het emoji rood kruisje op kleine schermen */
+        z-index: 101; /* geef het emoji rood kruisje een hogere z-index dan het iframe */
+        backdrop-filter: blur(10px); /* geef het emoji rood kruisje een glassmorphism effect */
+        border-radius: 50%; /* maak het emoji rood kruisje rond */
+        padding: 10px; /* geef het emoji rood kruisje wat ruimte */
+      }
+      
+    }
+    #mobilemenubutton {
+      width: 100%;
+      height: auto;
+      display: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .logo {
+      width: 200px;
+    }
+    .siteheader {
+      height: 500px;
+    }
+    .cart, .search {
+      width: 100px;
+    }
+    #mobilemenuiframe {
+      display: none; /* verberg het iframe standaard */
+      position: fixed; /* maak het iframe vast aan het scherm */
+      top: 0; /* plaats het iframe bovenaan */
+      left: 0; /* plaats het iframe links */
+      width: 100%; /* maak het iframe even breed als het scherm */
+      height: 100%; /* maak het iframe even hoog als het scherm */
+      z-index: 100; /* geef het iframe een hoge z-index */
+    }
+    #mobilemenuclose {
+      display: none; /* verberg het emoji rood kruisje standaard */
+      position: fixed; /* maak het emoji rood kruisje vast aan het scherm */
+      top: 10px; /* plaats het emoji rood kruisje iets onder de bovenkant */
+      right: 10px; /* plaats het emoji rood kruisje iets naast de rechterkant */
+      font-size: 50px; /* maak het emoji rood kruisje groot genoeg om te zien */
+    }
+    #iframe {
+     display: none; /* verberg het iframe standaard */
+     position: fixed; /* maak het iframe vast aan het scherm */
+     top: 0; /* plaats het iframe bovenaan */
+    left: 0; /* plaats het iframe links */
+     width: 100%; /* maak het iframe even breed als het scherm */
+    height: 100%; /* maak het iframe even hoog als het scherm */
+    z-index: 99; /* geef het iframe een z-index van 99 */
+     backdrop-filter: blur(10px); /* geef het iframe een glassmorphism effect */
+    }
+  </style>
 <style>
     @media (max-width: 600px) {
   /* CSS voor telefoons */
@@ -139,7 +207,24 @@
         </div>
     </div>
 </header>
-
+<script>
+    var mobilemenubutton = document.getElementById("mobilemenubutton");
+    var mobilemenuiframe = document.getElementById("mobilemenuiframe");
+    var mobilemenuclose = document.getElementById("mobilemenuclose");
+  
+    mobilemenubutton.addEventListener("click", function() {
+      mobilemenuiframe.style.display = "block";
+      mobilemenuiframe.src = "../interact/siteheadermenu.html";
+      mobilemenuclose.style.display = "inline";
+    });
+  
+    mobilemenuclose.addEventListener("click", function() {
+      mobilemenuiframe.style.display = "none";
+      mobilemenuiframe.src = "";
+      mobilemenuclose.style.display = "none";
+    });
+  </script>
+    
 <style> @media screen and (max-device-width: 800px) { /* Schrijf hier je CSS voor telefoons */ .nav-link { display: none; } } </style>
 
 <!-- Siteheader -->
