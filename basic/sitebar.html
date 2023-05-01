@@ -5,8 +5,10 @@
     <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 auto; max-width: 1200px; padding: 10px;">
         <img src="../textures/fs.png" alt="Logo" style="height: 70px;">
 <nav style="display: flex; flex-wrap: wrap;">
-    <a href="../index.html" class="nav-link">Home</a>
-    <a href="../shop/" class="nav-link">Webshop</a>
+    <div class="nav-btn2">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../shop/" class="nav-link">Webshop</a>
+    </div>
     <div class="nav-dropdown">
         <a href="../betuwe/" class="nav-link">Betuwe</a>
         <div class="nav-submenu">
@@ -34,7 +36,9 @@
             <a href="../doen/kaart/" class="nav-sublink">Kaart</a>
         </div>
     </div>
-    <a href="../meer/" class="nav-link">Over</a>
+    <div class="nav-btn2">
+        <a href="../meer/" class="nav-link">Over</a>
+    </div>
 </nav>
 <style>
     @media screen and (max-width: 768px) {
@@ -48,6 +52,9 @@
     display: none;
     }
     .nav-sublink {
+    display: none;
+    }
+    .nav-btn2 {
     display: none;
     }
     }
