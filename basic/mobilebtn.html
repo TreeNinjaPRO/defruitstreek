@@ -1,5 +1,3 @@
-<!-- mobile -->
-<img src="../textures/siteheadermenu.png" alt="Menu" onclick="openMenu()" style="height: 75px;">
 <style>
 @media screen and (max-width: 768px) {
   button {
@@ -8,22 +6,42 @@
     bottom: 0;
     border: none;
     cursor: pointer;
+    display: none;
   }
 }
 </style>
+</head>
+<body>
+<img src="../textures/siteheadermenu.png" alt="Menu" id="menu" style="height: 75px;">
+<button id="menu-button">Menu</button>
 <script>
-function openMenu() {
-  var iframe = document.createElement("iframe");
-  iframe.src = "../interact/mobilemenu.html";
-  iframe.style.position = "fixed";
-  iframe.style.width = "100%";
-  iframe.style.height = "100%";
-  iframe.style.top = "0";
-  iframe.style.left = "0";
-  iframe.style.border = "none";
-  document.body.appendChild(iframe);
-  setTimeout(function() {
-    document.body.removeChild(iframe);
-  }, 10000);
+function openMenu(id) {
+  var button = document.getElementById(id);
+  var iframe = document.getElementById("mobilemenu");
+  if (!iframe) {
+    iframe = document.createElement("iframe");
+    iframe.id = "mobilemenu";
+    iframe.src = "../interact/mobilemenu.html";
+    iframe.style.position = "fixed";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.top = "0";
+    iframe.style.left = "0";
+    iframe.style.border = "none";
+    iframe.style.display = "none";
+    document.body.appendChild(iframe);
+  }
+  if (button.style.display == "none") {
+    button.style.display = "block";
+    iframe.style.display = "block";
+  } else {
+    button.style.display = "none";
+    iframe.style.display = "none";
+  }
 }
+
+document.getElementById("menu").addEventListener("click", function() {
+  openMenu("menu-button");
+});
 </script>
+<!-- mobile -->
