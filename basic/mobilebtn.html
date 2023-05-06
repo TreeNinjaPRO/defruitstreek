@@ -1,3 +1,6 @@
+
+<!-- mobilemenubtn -->
+<img src="../textures/siteheadermenu.png" alt="site header menu button" class="siteheadermenu-btn" onclick="openMobileMenu()">
 <style>
   .siteheadermenu-btn {
     position: fixed;
@@ -21,7 +24,7 @@
     width: 100%;
     height: 100%;
     border: none;
-    z-index: 10;
+    z-index: 11; /* verhoogd van 10 naar 11 */
     animation: slide-in 1s ease-in-out;
   }
 
@@ -36,6 +39,7 @@
     font-size: 20px;
     border-radius: 50%;
     cursor: pointer;
+    z-index: 12; /* verhoogd van geen naar 12 */
   }
 
   @keyframes slide-in {
@@ -75,5 +79,3 @@
     });
   }
 </script>
-
-<img src="../textures/siteheadermenu.png" alt="site header menu button" class="siteheadermenu-btn" onclick="openMobileMenu()">
