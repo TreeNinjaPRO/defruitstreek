@@ -1,12 +1,9 @@
-body {
-  background-color: blue;
-}
+@font-face { font-family: ProximaSans; src: url(…/font/ProximaSans.ttf); }
 
-button {
-  background-color: lightblue;
-  font-weight: bold;
-}
+@font-face { font-family: AnjaEliane; src: url(…/font/Anja Eliane accent002.ttf); }
 
-image {
-  height: 100px;
-}
+body { font-family: ProximaSans; }
+
+h1 { font-family: AnjaEliane; }
+
+h2 { font-family: ProximaSans; font-weight: bold; }
