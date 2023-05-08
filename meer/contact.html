@@ -1,0 +1,199 @@
+<html>
+<head>
+  <style>
+    /* Background styles */
+body {
+  background-image: url('/textures/abt.png');
+  background-position: center;
+  background-size: cover; /* Added this line */
+  font-family: ProximaSans, sans-serif;
+}
+    /* Glassmorphism card effect */
+    .card {
+      backdrop-filter: blur(10px) saturate(180%);
+      -webkit-backdrop-filter: blur(10px) saturate(180%);
+      background-color: rgba(255, 255, 255, 0.5); /* Changed the opacity to 0.5 */
+      border-radius: 12px;
+      border: 1px solid rgba(209, 213, 219, 0.3);
+      width: 80%;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Card title */
+    .card h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    /* Card underline image */
+    .card img {
+      display: block;
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    /* Card main text */
+    .card p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    /* Card buttons container */
+    .card .buttons {
+      display: flex; /* Added flex display to align the buttons */
+      justify-content: center; /* Centered the buttons horizontally */
+      align-items: center; /* Centered the buttons vertically */
+    }
+
+    /* Card buttons */
+.card button {
+  display: inline-block;
+  width: 45%;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  color: black; /* Changed the color to black */
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+    /* Button colors */
+.card button.call {
+  background-color: rgba(255, 255, 255, 0.5); /* Changed the color to white */
+}
+
+.card button.email {
+  background-color: rgba(255, 255, 255, 0.5); /* Changed the color to white */
+}
+
+    /* Button hover effects */
+    .card button:hover {
+      transform: scale(1.05);
+    }
+
+    /* Button active effects */
+    .card button:active {
+      transform: scale(0.95);
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 600px) {
+      .card {
+        width: 90%;
+        padding: 10px;
+        box-shadow: none;
+        border-radius: 6px;
+        border-width: 0.5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .card h1 {
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
+
+      .card img {
+        width: 40%;
+        margin-bottom: 5px;
+      }
+
+      .card p {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .card button {
+        width: 40%;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 14px;
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+
+      /* Reduced the emoji size for smaller screens */
+      .card button span {
+        font-size: 12px;
+      }
+	* Card buttons */
+.card button {
+  display: inline-block;
+  width: 45%;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(5px); /* Added this line */
+  -webkit-backdrop-filter: blur(5px); /* Added this line */
+}
+
+/* Button colors */
+.card button.call {
+  background-color: rgba(255,255,255,0.5); /* Changed the opacity to 0.5 */
+}
+
+.card button.email {
+  background-color: rgba(255,255,255,0.5); /* Changed the opacity to 0.5 */
+}
+    }
+    
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Contact opnemen</h1>
+<img src="/textures/underline.png" alt="underline">
+<p>De Fruitstreek is dé website voor alles omtrent de Betuwe!
+Klik op een van de onderstaande opties om contact op te nemen.</p>
+<div class="buttons"> <!-- Added a div container for the buttons -->
+<button class="call" onclick="call()">📞 Telefonisch contact opnemen</button>
+<button class="email" onclick="email()">📧 E-mail</button>
+</div>
+</div>
+
+<script>
+// Base64 encoding function
+function encode(str) {
+ return btoa(str);
+}
+
+// Base64 decoding function
+function decode(str) {
+ return atob(str);
+}
+
+// Function to call using the base64 encoded phone number
+function call() {
+  // Get the encoded phone number from the current web page context
+  var encodedNumber = "MDYyMDI2OTgwMQ==";
+  // Decode the phone number
+  var decodedNumber = decode(encodedNumber);
+  // Create a tel link with the decoded number
+  var telLink = "tel:" + decodedNumber;
+  // Open the tel link in a new window
+  window.open(telLink, "_blank");
+}
+
+// Function to email using the base64 encoded email address
+function email() {
+  // Get the encoded email address from the current web page context
+  var encodedEmail = "ZW1haWxAZXhhbXBsZS5jb20=";
+  // Decode the email address
+  var decodedEmail = decode(encodedEmail);
+  // Create a mailto link with the decoded email address
+  var mailtoLink = "mailto:" + decodedEmail;
+  // Open the mailto link in a new window
+  window.open(mailtoLink, "_blank");
+}
+</script>
+</body>
+</html>
