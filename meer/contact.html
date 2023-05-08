@@ -4,6 +4,8 @@
   <style>
     /* Background styles */
 body {
+  display: flex;
+  align-items: center;
   background-image: url('/textures/abt.png');
   background-position: center;
   background-size: cover; /* Added this line */
@@ -25,7 +27,7 @@ body {
 
     /* Card title */
     .card h1 {
-      text-align: center;
+      text-align: left;
       font-size: 32px;
       margin-bottom: 10px;
     }
@@ -77,64 +79,15 @@ body {
 }
 
     /* Button hover effects */
-    .card button:hover {
-      transform: scale(1.05);
-    }
-
-    /* Button active effects */
-    .card button:active {
-      transform: scale(0.95);
-    }
-
-    /* Media query for smaller screens */
-    @media (max-width: 600px) {
-      .card {
-    	  backdrop-filter: blur(10px) saturate(180%);
-    	  -webkit-backdrop-filter: blur(10px) saturate(180%);
-    	  background-color: rgba(255, 255, 255, 0.5); /* Changed the opacity to 0.5 */
-    	  border-radius: 12px;
-        width: 90%;
-        padding: 10px;
-        box-shadow: none;
-        border-radius: 6px;
-        border-width: 0.5px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-   	  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-
-      }
-
-      .card h1 {
-        font-size: 24px;
-        margin-bottom: 5px;
-      }
-
-.card img {
-  display: block;
-  width: 40%;
-  height: 5px;
-  margin: 0 auto;
-  object-fit: cover;
+.card button {
+  transition: all 0.3s ease-in-out;
 }
 
-      .card p {
-        font-size: 14px;
-        margin-bottom: 10px;
-      }
-      .card button {
-        width: 40%;
-        height: 40px;
-        border-radius: 20px;
-        font-size: 14px;
-        margin-left: 5%;
-        margin-right: 5%;
-      }
+.card button:hover {
+  opacity: 0.8;
+}
 
-      /* Reduced the emoji size for smaller screens */
-      .card button span {
-        font-size: 12px;
-      }
-	* Card buttons */
+
 .card button {
   display: inline-block;
   width: 45%;
@@ -142,8 +95,8 @@ body {
   border-radius: 25px;
   border: none;
   font-size: 16px;
-  color: white;
   cursor: pointer;
+ background-color: rgba(255,255,255,0.5);
   backdrop-filter: blur(5px); /* Added this line */
   -webkit-backdrop-filter: blur(5px); /* Added this line */
 }
@@ -156,7 +109,10 @@ body {
 .card button.email {
   background-color: rgba(255,255,255,0.5); /* Changed the opacity to 0.5 */
 }
-    }
+h1 {
+  text-align: left;
+}
+
     
 </style>
 </head>
