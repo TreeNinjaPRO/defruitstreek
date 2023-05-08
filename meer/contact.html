@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <html>
 <head>
   <style>
@@ -30,11 +31,13 @@ body {
     }
 
     /* Card underline image */
-    .card img {
-      display: block;
-      width: 50%;
-      margin: 0 auto;
-    }
+.card img {
+  display: block;
+  width: 50%;
+  height: 25px;
+  margin: 0 auto;
+  object-fit: cover;
+}
 
     /* Card main text */
     .card p {
@@ -86,6 +89,10 @@ body {
     /* Media query for smaller screens */
     @media (max-width: 600px) {
       .card {
+    	  backdrop-filter: blur(10px) saturate(180%);
+    	  -webkit-backdrop-filter: blur(10px) saturate(180%);
+    	  background-color: rgba(255, 255, 255, 0.5); /* Changed the opacity to 0.5 */
+    	  border-radius: 12px;
         width: 90%;
         padding: 10px;
         box-shadow: none;
@@ -93,6 +100,8 @@ body {
         border-width: 0.5px;
         margin-top: 20px;
         margin-bottom: 20px;
+   	  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+
       }
 
       .card h1 {
@@ -100,10 +109,13 @@ body {
         margin-bottom: 5px;
       }
 
-      .card img {
-        width: 40%;
-        margin-bottom: 5px;
-      }
+.card img {
+  display: block;
+  width: 40%;
+  height: 5px;
+  margin: 0 auto;
+  object-fit: cover;
+}
 
       .card p {
         font-size: 14px;
