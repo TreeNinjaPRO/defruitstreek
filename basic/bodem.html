@@ -1,56 +1,97 @@
-html
-<div id="footer" style="background-color: black; font-family: '../font/ProximaSans.ttf'; text-align: right;">
-  <div id="logo" style="float: left; margin-left: 10px;">
-    <button id="top-button" style="background-color: green; color: white; border-radius: 5px; margin-top: 10px;">&#8593; Naar de top</button>
-    <img src="../textures/fs_tw.png" alt="Logo">
-    <p style="color: white;">Lorem ipsum dolor sit amet!</p>
-  </div>
-  <div id="menu" style="display: flex; justify-content: space-between; align-items: center; margin-right: 10px;">
-    <ul style="list-style-type: none; color: white;">
-      <li><a href="#" style="font-family: '../font/Anja Eliane accent002.ttf'; text-transform: uppercase;">Webshop</a></li>
-      <li><a href="#">Pakket samenstellen</a></li>
-      <li><a href="#">Winkelwagen</a></li>
-    </ul>
-    <ul style="list-style-type: none; color: white;">
-      <li><a href="#" style="font-family: '../font/Anja Eliane accent002.ttf'; text-transform: uppercase;">Betuwe</a></li>
-    </ul>
-    <ul style="list-style-type: none; color: white;">
-      <li><a href="#" style="font-family: '../font/Anja Eliane accent002.ttf'; text-transform: uppercase;">Routes</a></li>
-      <li><a href="#">Fietsroutes</a></li>
-      <li><a href="#">Looproutes</a></li>
-    </ul>
-    <ul style="list-style-type: none; color: white;">
-      <li><a href="#" style="font-family: '../font/Anja Eliane accent002.ttf'; text-transform: uppercase;">Doen</a></li>
-      <li><a href="#">Fiets huren</a></li>
-      <li><a href="#">Interessante locaties</a></li>
-    </ul>
-    <ul style="list-style-type: none; color: white;">
-      <li><a href="#" style="font-family: '../font/Anja Eliane accent002.ttf'; text-transform: uppercase;">Meer</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Over</a></li>
-      <li><a href="#">Sitemap</a></li>
-    </ul>
-  </div>
-</div>
-
-<script>
-  // Get the button
-  var topButton = document.getElementById("top-button");
-
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function() {scrollFunction()};
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      topButton.style.display = "block";
-    } else {
-      topButton.style.display = "none";
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add this to remove the margin and padding from the sitebottom body */
+    .sitebottom-body {
+      margin: 0;
+      padding: 0;
     }
-  }
+    
+    #site-bottom-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: black;
+      color: white;
+      width: 100%;
+      z-index: 8;
+    }
 
-  // When the user clicks on the button, scroll to the top of the document
-  topButton.onclick = function() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-</script>
+    #site-bottom-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .site-bottom-name {
+      margin-top: 10px;
+    }
+
+    #site-bottom-right {
+      display: flex;
+    }
+
+    .site-bottom-menu {
+      list-style: none;
+      display: flex;
+    }
+
+    .site-bottom-menu-item {
+      margin-right: 20px;
+    }
+
+    .site-bottom-menu-item p {
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      #site-bottom-container {
+        flex-direction: column;
+        align-items: center; /* add this to center the elements */
+      }
+      
+      #site-bottom-left {
+        flex-direction: row; /* change this to place the name next to the logo */
+        justify-content: center; /* add this to center the logo and name */
+        margin-bottom: 10px; /* add this to create some space below the logo and name */
+      }
+      
+      #site-bottom-right {
+        flex-direction: column; /* change this to stack the menu items vertically */
+        align-items: center; /* add this to center the menu items */
+      }
+      
+      .site-bottom-menu-item {
+        margin-right: 0px; /* remove this to avoid extra space on the right */
+        margin-bottom: 10px; /* add this to create some space below each menu item */
+      }
+    }
+    
+    /* Add this to remove the default link style */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body class="sitebottom-body">
+  <!-- sitebottom -->
+  <div id="site-bottom-container">
+    <div id="site-bottom-left">
+      <img src="/textures/fs_logo.png" alt="Fruitstreek logo" width="100px">
+      <p class="site-bottom-name">DE FRUITSTREEK.NL</p>
+    </div>
+    <div id="site-bottom-right">
+      <ul class="site-bottom-menu">
+        <li class="site-bottom-menu-item"><h1>Webshop</h1><a href="#"><p>Placeholder</p></a></li>
+        <li class="site-bottom-menu-item"><h1>Betuwe</h1><a href="#"><p>Placeholder</p></a></li>
+        <li class="site-bottom-menu-item"><h1>Routes</h1><a href="#"><p>Placeholder</p></a></li>
+        <li class="site-bottom-menu-item"><h1>Locaties & Doen</h1><a href="#"><p>Placeholder</p></a></li>
+        <li class="site-bottom-menu-item"><h1>Meer</h1><a href="#"><p>Placeholder</p></a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
