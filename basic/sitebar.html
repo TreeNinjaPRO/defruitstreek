@@ -40,6 +40,9 @@
         <a href="/meer/" class="nav-link">Over</a>
     </div>
 </nav>
+        <div id="search-popup">
+    <iframe id="search-iframe" src="/interact/searchengine.html"></iframe>
+</div>
 <style>
     @media screen and (max-width: 600px) {
         .nav-link {
@@ -82,6 +85,36 @@
 }
 </style>
 <style>
+    #search-popup {
+  display: none;
+  position: fixed;
+  top: -450px;
+  right: -350px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#search-iframe {
+  position: absolute;
+  top: calc(50px - var(--sitebar-height));
+  right: calc(50px - var(--sitebar-width));
+  width: var(--iframe-width);
+  height: var(--iframe-height);
+  border: none;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(var(--blur));
+  box-shadow: var(--box-shadow);
+}
+
+:root {
+  --sitebar-height: 80px;
+  --sitebar-width: calc(100% - (3 * var(--img-width)) - (4 * var(--img-margin)));
+  --img-width: calc(var(--sitebar-height) * (60 /80));
+  --img-margin: calc(var(--sitebar-height) * (10 /80));
+  
+}
+
     .nav-link {
         display: inline-block;
         margin-right: 10px;
@@ -173,11 +206,31 @@
 
 </style>
         <div style="display:flex; align-items:center;">
-            <img src="../textures/cart.png" alt="Cart" style="height:60px; width:60px; margin-right:10px;">
-            <img src="../textures/search.png" alt="Search" style="height:60px; width:60px;">
+<a href="/shop/cart/"> <img src="/textures/cart.png" alt="Cart" style="height:60px; width:60px; margin-right:10px;"> </a>
+            <img src="/textures/search.png" alt="Search" style="height:60px; width:60px;" onclick="togglePopup()">
         </div>
     </div>
 </header>
 <head> <!-- MAIN --> <link rel="stylesheet" type="text/css" href="../style.css"> </head>
+<script>
+function togglePopup() {
+    var popup = document.getElementById("search-popup");
+    var iframe = document.getElementById("search-iframe");
+    if (popup.style.display == "none") {
+        popup.style.display = "block";
+        iframe.style.animation = "slideIn .5s ease-in-out forwards";
+    } else {
+        iframe.style.animation = "slideOut .5s ease-in-out forwards";
+        setTimeout(function() {
+            popup.style.display = "none";
+        },500);
+    }
+}
+document.body.addEventListener("click", function(event) {
+    if (event.target != searchBtn && event.target != popup && event.target != iframe) {
+        togglePopup();
+    }
+});
+</script>
 
 <!-- Siteheader -->
