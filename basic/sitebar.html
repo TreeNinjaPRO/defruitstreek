@@ -224,9 +224,39 @@ function togglePopup() {
         },500);
     }
 }
+   @keyframes slideIn {
+  0% {transform: translateX(-100%);}
+  100% {transform: translateX(0);}
+}
+
+@keyframes slideOut {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-100%);}
+}
 document.body.addEventListener("click", function(event) {
 if (event.target != document.getElementById("searchBtn") && event.target != popup && event.target != iframe) {        togglePopup();
     }
+});
+// get the popup element
+var popup = document.getElementById("search-popup");
+// add an event listener to the document
+document.addEventListener("click", function(event) {
+  // check if the click target is inside the popup element
+  var isClickInside = popup.contains(event.target);
+  // if not, hide the popup element
+  if (!isClickInside) {
+    togglePopup();
+  }
+});
+var popup = document.getElementById("search-popup");
+// add an event listener to the document
+document.addEventListener("click", function(event) {
+  // check if the click target is inside the popup element
+  var isClickInside = popup.contains(event.target);
+  // if not, hide the popup element
+  if (!isClickInside) {
+    togglePopup();
+  }
 });
 </script>
 
