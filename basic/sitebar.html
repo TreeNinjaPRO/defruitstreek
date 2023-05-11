@@ -225,8 +225,7 @@ function togglePopup() {
     }
 }
 document.body.addEventListener("click", function(event) {
-    if (event.target != searchBtn && event.target != popup && event.target != iframe) {
-        togglePopup();
+if (event.target != document.getElementById(“searchBtn”) && event.target != popup && event.target != iframe) {        togglePopup();
     }
 });
 </script>
