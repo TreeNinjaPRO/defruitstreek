@@ -207,7 +207,7 @@
 </style>
         <div style="display:flex; align-items:center;">
 <a href="/shop/cart/"> <img src="/textures/cart.png" alt="Cart" style="height:60px; width:60px; margin-right:10px;"> </a>
-<img id=“searchBtn” src=“/textures/search.png” alt="Search" style=“height:60px; width:60px;” onclick=“togglePopup()”>
+<img id="searchBtn" src="/textures/search.png" alt="Search" style="height:60px; width:60px;" onclick="togglePopup()">
 </header>
 <head> <!-- MAIN --> <link rel="stylesheet" type="text/css" href="../style.css"> </head>
 <script>
@@ -225,7 +225,7 @@ function togglePopup() {
     }
 }
 document.body.addEventListener("click", function(event) {
-if (event.target != document.getElementById(“searchBtn”) && event.target != popup && event.target != iframe) {        togglePopup();
+if (event.target != document.getElementById("searchBtn") && event.target != popup && event.target != iframe) {        togglePopup();
     }
 });
 </script>
