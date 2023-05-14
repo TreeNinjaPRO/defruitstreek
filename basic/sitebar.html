@@ -317,7 +317,47 @@
     });
   }
 </script>
+<style>
+  @media (min-width: 600px) {
+    .siteheadermenu-btn {
+      display: none;
+    }
+  }
 
+  .mobilemenu-iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 11; /* verhoogd van 10 naar 11 */
+    animation: mobilemenu1 1s ease-in-out;
+  }
+
+  .close-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 12; /* verhoogd van geen naar 12 */
+  }
+
+  @keyframes mobilemenu1 {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+</style>
     <style>
         .siteheadermenu-btn {
   margin-right: 10px;
