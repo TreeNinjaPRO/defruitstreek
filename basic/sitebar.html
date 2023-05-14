@@ -1,264 +1,266 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Siteheader -->
-<header style="position: fixed; top: 0; left: 0; width: 100%; height: 80px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 2;">
-    <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 auto; max-width: 1200px; padding: 10px;">
-        <img src="/textures/fs.png" alt="Logo" style="height: 70px;">
-<nav style="display: flex; flex-wrap: wrap;">
-    <div class="nav-btn2">
-        <a href="/index.html" class="nav-link">Home</a>
-        <a href="/shop/" class="nav-link">Webshop</a>
-    </div>
-    <div class="nav-dropdown">
-        <a href="/betuwe/" class="nav-link">Betuwe</a>
-        <div class="nav-submenu">
-            <a href="/betuwe/cultuur/" class="nav-sublink">Cultuur</a>
-            <a href="/betuwe/vruchten/" class="nav-sublink">Vruchten</a>
-            <a href="/betuwe/bloesem/" class="nav-sublink">Bloesem</a>
-            <a href="/betuwe/waterschappen/" class="nav-sublink">Waterschappen</a>
-            <a href="/betuwe/gebieden/" class="nav-sublink">Gebieden</a>
+    <!-- Siteheader -->
+    </head><body><header style="position: fixed; top: 0; left: 0; width: 100%; height: 80px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 2;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 auto; max-width: 1200px; padding: 10px;">
+            <img src="/textures/siteheadermenu.png" alt="site header menu button" class="siteheadermenu-btn" onclick="openMobileMenu()" style="height: 70px;">
+            <img src="/textures/fs.png" alt="Logo" style="height: 70px;">
+    <nav style="display: flex; flex-wrap: wrap;">
+        <div class="nav-btn2">
+            <a href="/index.html" class="nav-link">Home</a>
+            <a href="/shop/" class="nav-link">Webshop</a>
         </div>
-    </div>
-    <div class="nav-dropdown">
-        <a href="/routes/" class="nav-link">Routes</a>
-        <div class="nav-submenu">
-            <a href="/routes/fietsen/" class="nav-sublink">Fietsen</a>
-            <a href="/routes/wandelen/" class="nav-sublink">Wandelen</a>
-            <a href="/routes/varen/" class="nav-sublink">Varen</a>
+        <div class="nav-dropdown">
+            <a href="/betuwe/" class="nav-link">Betuwe</a>
+            <div class="nav-submenu">
+                <a href="/betuwe/cultuur/" class="nav-sublink">Cultuur</a>
+                <a href="/betuwe/vruchten/" class="nav-sublink">Vruchten</a>
+                <a href="/betuwe/bloesem/" class="nav-sublink">Bloesem</a>
+                <a href="/betuwe/waterschappen/" class="nav-sublink">Waterschappen</a>
+                <a href="/betuwe/gebieden/" class="nav-sublink">Gebieden</a>
+            </div>
         </div>
-    </div>
-    <div class="nav-dropdown">
-        <a href="/doen/" class="nav-link">Doen</a>
-        <div class="nav-submenu">
-            <a href="/doen/evenementen/" class="nav-sublink">Evenementen</a>
-            <a href="/doen/fietshuren/" class="nav-sublink">Fiets huren</a>
-            <a href="/doen/poi/" class="nav-sublink">Locaties (POI)</a>
-            <a href="/doen/kaart/" class="nav-sublink">Kaart</a>
+        <div class="nav-dropdown">
+            <a href="/routes/" class="nav-link">Routes</a>
+            <div class="nav-submenu">
+                <a href="/routes/fietsen/" class="nav-sublink">Fietsen</a>
+                <a href="/routes/wandelen/" class="nav-sublink">Wandelen</a>
+                <a href="/routes/varen/" class="nav-sublink">Varen</a>
+            </div>
         </div>
+        <div class="nav-dropdown">
+            <a href="/doen/" class="nav-link">Doen</a>
+            <div class="nav-submenu">
+                <a href="/doen/evenementen/" class="nav-sublink">Evenementen</a>
+                <a href="/doen/fietshuren/" class="nav-sublink">Fiets huren</a>
+                <a href="/doen/poi/" class="nav-sublink">Locaties (POI)</a>
+                <a href="/doen/kaart/" class="nav-sublink">Kaart</a>
+            </div>
+        </div>
+        <div class="nav-btn2">
+            <a href="/meer/" class="nav-link">Over</a>
+        </div>
+    </nav>
+    <div class="searchbox" id="search-box" style="visibility: hidden;">
+      <iframe src="/interact/searchengine.html"></iframe>
     </div>
-    <div class="nav-btn2">
-        <a href="/meer/" class="nav-link">Over</a>
-    </div>
-</nav>
-<div class="searchbox" id="search-box">
-  <iframe src="/interact/searchengine.html"></iframe>
-</div>
-<style>
-    @media screen and (max-width: 600px) {
-        .nav-link {
-    display: none;
-    }
-    .nav-dropdown {
-    display: none;
-    }
-    .nav-submenu {
-    display: none;
-    }
-    .nav-sublink {
-    display: none;
-    }
-    .nav-btn2 {
-    display: none;
-    }
-    }
-</style>
-<style>
-@media screen and (max-width: 600px) {
-  .sitebar {
-    text-align: center;
-  }
-  .logo {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  .cart {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .search {
-    position: absolute;
-    right: 90px; /* pas deze waarde aan */
-    top: 0;
-  }
-}
-</style>
-<style>
-    #search-popup {
-  display: none;
-  position: fixed;
-  top: -450px;
-  right: -350px;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-}
-
-#search-iframe {
-  position: absolute;
-  top: calc(50px - var(--sitebar-height));
-  right: calc(50px - var(--sitebar-width));
-  width: var(--iframe-width);
-  height: var(--iframe-height);
-  border: none;
-  border-radius: var(--border-radius);
-  backdrop-filter: blur(var(--blur));
-  box-shadow: var(--box-shadow);
-}
-
-:root {
-  --sitebar-height: 80px;
-  --sitebar-width: calc(100% - (3 * var(--img-width)) - (4 * var(--img-margin)));
-  --img-width: calc(var(--sitebar-height) * (60 /80));
-  --img-margin: calc(var(--sitebar-height) * (10 /80));
-  
-}
-
-    .nav-link {
-        display: inline-block;
-        margin-right: 10px;
-        padding: 10px 20px;
-        border-radius: 20px;
-        background-color: #548235;
-        color: white;
-        font-family: 'ProximaSans', sans-serif;
-        font-size: 18px;
-        text-decoration: none;
-        transition: transform 0.3s;
-    }
-
-    .nav-link:hover {
-        transform: scale(1.1);
-    }
-
-    .nav-dropdown {
-        position: relative;
-    }
-
-    .nav-dropdown:hover .nav-submenu {
-        display: block;
-    }
-
-    .nav-submenu {
+    <style>
+        @media screen and (max-width: 600px) {
+            .nav-link {
         display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 200px;
-        padding: 10px;
-        border-radius: 10px;
-        background-color: rgba(84, 130, 53, 0.5);
-        backdrop-filter: blur(10px);
-    }
-
-    .nav-sublink {
-        display: block;
-        margin-bottom: 10px;
-        padding: 5px 10px;
-        border-radius: 10px;
-        color: white;
-        font-family: 'ProximaSans', sans-serif;
-        font-size: 16px;
-        text-decoration: none;
-    }
-    .searchbox {
-  position: fixed;
-  top: 80px; // This will make the search box 80px below the top of the screen
-  right: 0; // This will make the search box aligned to the right of the screen
-  width: 400px;
-  height: 360px;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
-  border: none;
-}
-
-.searchbox iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-@media screen and (max-width:600px) {
-  
-.searchbox {
-    position: absolute;
-    width: calc(100% - margin-left - margin-right); // Adjust this according to your desired margins
-    height: calc(100% - margin-top - margin-bottom); // Adjust this according to your desired margins
-    left: margin-left; // Adjust this according to your desired margins
-    right: margin-right; // Adjust this according to your desired margins
-    top: margin-top; // Adjust this according to your desired margins
-    bottom: margin-bottom; // Adjust this according to your desired margins
-    }
-}
-
-    .nav-sublink:hover {
-        background-color: rgba(84, 130, 53, 0.4);
-    }
-
-    @media (max-width: 600px) {
-      nav {
-          flex-direction: column;
-          align-items: center;
-      }
-
-      .nav-link {
-          margin-right: 0;
-          margin-bottom: 10px;
-      }
-      
-      .nav-dropdown {
-          width: 100%;
-      }
-
-      .nav-submenu {
-          width: calc(100% - 20px);
-          left: 50%;
-          transform: translateX(-50%);
-      }
-      
-      .nav-sublink {
-          text-align: center;
-      }
+        }
+        .nav-dropdown {
+        display: none;
+        }
         .nav-submenu {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.nav-dropdown:hover .nav-submenu {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-    }
-
-</style>
-        <div style="display:flex; align-items:center;">
-<a href="/shop/cart/"> <img src="/textures/cart.png" alt="Cart" style="height:60px; width:60px; margin-right:10px;"> </a>
-<img src="/textures/search.png" id="search-icon" alt="Search" onclick="toggleSearchBox()" width="60" height="60"></header>
-<head> <!-- MAIN --> <link rel="stylesheet" type="text/css" href="../style.css"> </head>
-<script>
-    // Get the search icon and the search box elements
-    var searchIcon = document.getElementById("search-icon");
-    var searchBox = document.getElementById("search-box");
-
-    // Set the initial visibility of the search box to hidden
-    searchBox.style.visibility = "hidden";
-
-    // Define a function to toggle the visibility of the search box
-    function toggleSearchBox() {
-      // If the search box is hidden, make it visible and vice versa
-      if (searchBox.style.visibility == "hidden") {
-        searchBox.style.visibility = "visible";
-        // You can also add some animation here, such as fading in or sliding in
-        // See above for some examples and tips
-      } else {
-        searchBox.style.visibility = "hidden";
-        // You can also add some animation here, such as fading out or sliding out
-        // See above for some examples and tips
+        display: none;
+        }
+        .nav-sublink {
+        display: none;
+        }
+        .nav-btn2 {
+        display: none;
+        }
+        }
+    </style>
+    <style>
+    @media screen and (max-width: 600px) {
+      .sitebar {
+        text-align: center;
+      }
+      .logo {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .cart {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .search {
+        position: absolute;
+        right: 90px; /* pas deze waarde aan */
+        top: 0;
       }
     }
-    </script>
-
-<!-- Siteheader -->
+    </style>
+    <style>
+        #search-popup {
+      display: none;
+      position: fixed;
+      top: -450px;
+      right: -350px;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    }
+    
+    #search-iframe {
+      position: absolute;
+      top: calc(50px - var(--sitebar-height));
+      right: calc(50px - var(--sitebar-width));
+      width: var(--iframe-width);
+      height: var(--iframe-height);
+      border: none;
+      border-radius: var(--border-radius);
+      backdrop-filter: blur(var(--blur));
+      box-shadow: var(--box-shadow);
+    }
+    
+    :root {
+      --sitebar-height: 80px;
+      --sitebar-width: calc(100% - (3 * var(--img-width)) - (4 * var(--img-margin)));
+      --img-width: calc(var(--sitebar-height) * (60 /80));
+      --img-margin: calc(var(--sitebar-height) * (10 /80));
+      
+    }
+    
+        .nav-link {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: #548235;
+            color: white;
+            font-family: 'ProximaSans', sans-serif;
+            font-size: 18px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+    
+        .nav-link:hover {
+            transform: scale(1.1);
+        }
+    
+        .nav-dropdown {
+            position: relative;
+        }
+    
+        .nav-dropdown:hover .nav-submenu {
+            display: block;
+        }
+    
+        .nav-submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(84, 130, 53, 0.5);
+            backdrop-filter: blur(10px);
+        }
+    
+        .nav-sublink {
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            border-radius: 10px;
+            color: white;
+            font-family: 'ProximaSans', sans-serif;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .searchbox {
+      position: fixed;
+      top: 80px; // This will make the search box 80px below the top of the screen
+      right: 0; // This will make the search box aligned to the right of the screen
+      width: 400px;
+      height: 360px;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+      border: none;
+    }
+    
+    .searchbox iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    @media screen and (max-width:600px) {
+      
+    .searchbox {
+        position: absolute;
+        width: calc(100% - margin-left - margin-right); // Adjust this according to your desired margins
+        height: calc(100% - margin-top - margin-bottom); // Adjust this according to your desired margins
+        left: margin-left; // Adjust this according to your desired margins
+        right: margin-right; // Adjust this according to your desired margins
+        top: margin-top; // Adjust this according to your desired margins
+        bottom: margin-bottom; // Adjust this according to your desired margins
+        }
+    }
+    
+        .nav-sublink:hover {
+            background-color: rgba(84, 130, 53, 0.4);
+        }
+    
+        @media (max-width: 600px) {
+          nav {
+              flex-direction: column;
+              align-items: center;
+          }
+    
+          .nav-link {
+              margin-right: 0;
+              margin-bottom: 10px;
+          }
+          
+          .nav-dropdown {
+              width: 100%;
+          }
+    
+          .nav-submenu {
+              width: calc(100% - 20px);
+              left: 50%;
+              transform: translateX(-50%);
+          }
+          
+          .nav-sublink {
+              text-align: center;
+          }
+            .nav-submenu {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+    
+    .nav-dropdown:hover .nav-submenu {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+        }
+    
+    </style>
+            <div style="display:flex; align-items:center;">
+    <a href="/shop/cart/"> <img src="/textures/cart.png" alt="Cart" style="height:60px; width:60px; margin-right:10px;"> </a>
+    <img src="/textures/search.png" id="search-icon" alt="Search" onclick="toggleSearchBox()" width="60" height="60"></div></div></header>
+     <!-- MAIN --> <link rel="stylesheet" type="text/css" href="../style.css"> 
+    <script>
+        // Get the search icon and the search box elements
+        var searchIcon = document.getElementById("search-icon");
+        var searchBox = document.getElementById("search-box");
+    
+        // Set the initial visibility of the search box to hidden
+        searchBox.style.visibility = "hidden";
+    
+        // Define a function to toggle the visibility of the search box
+        function toggleSearchBox() {
+          // If the search box is hidden, make it visible and vice versa
+          if (searchBox.style.visibility == "hidden") {
+            searchBox.style.visibility = "visible";
+            // You can also add some animation here, such as fading in or sliding in
+            // See above for some examples and tips
+          } else {
+            searchBox.style.visibility = "hidden";
+            // You can also add some animation here, such as fading out or sliding out
+            // See above for some examples and tips
+          }
+        }
+        </script>
+    <script src="/basic/mobilebtn.js"></script>
+    <!-- Siteheader -->
+    </body></html>
