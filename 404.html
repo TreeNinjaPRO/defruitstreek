@@ -1,5 +1,183 @@
 <html>
 <head>
+  <img src="../textures/site_placeholder_button.png" alt="Button" id="button">
+  <img src="../textures/site_placeholder_extra.svg" alt="Extra" id="repair-tool">
+  <style>
+    .site_placeholder_btn {
+  height: 75px;
+  width: auto;
+}
+
+@media (max-width: 600px) {
+  /* This image shows up in the top left corner of the screen for when @media is below 600px for phones */
+  .site_placeholder_btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media (min-width: 601px) {
+  .site_placeholder_btn {    position: absolute;
+    top: calc(75% - 37.5px); /* Subtract half of the image height */
+    left: calc(33.33% - 37.5px); /* Subtract half of the image width */
+  }
+}
+@media (max-width: 600px) {
+  /* This image shows up in a random position on the screen for when @media is below 600px for phones */
+  #repair-tool {
+    /* Use JavaScript to generate random values for top and left properties */
+    top: var(--random-top);
+    left: var(--random-left);
+  }
+}
+
+@media (min-width: 601px) {
+  /* In regular HTML (on desktop, above >600px, the image shows up in a random position on the screen */
+  #repair-tool {
+    /* Use JavaScript to generate random values for top and left properties */
+    top: var(--random-top);
+    left: var(--random-left);
+  }
+}
+
+
+#repair-tool:active {
+  animation: rotate-tool 1s linear;
+}
+
+@keyframes rotate-tool {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(90deg); }
+  100% { transform: rotate(0deg); }
+}
+
+#repair-tool:hover {
+  transform: scale(1.2);
+}
+
+#repair-tool.gravity {
+  top: calc(100% - 70px); /* Subtract the image height */
+  transition: top 1s ease-in;
+}
+  </style>
+<script>
+// Get the image element
+var tool = document.getElementById("repair-tool");
+
+// Initialize some variables for tracking mouse position and movement
+var mouseX = 0;
+var mouseY = 0;
+var offsetX = 0;
+var offsetY = 0;
+var dragging = false;
+
+// Add event listeners for mouse down, up and move events
+tool.addEventListener("mousedown", startDrag);
+tool.addEventListener("mouseup", stopDrag);
+tool.addEventListener("mousemove", drag);
+
+// Define a function to start dragging
+function startDrag(e) {
+  // Get the current mouse position
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  // Get the current image position
+  var rect = tool.getBoundingClientRect();
+
+  // Calculate the offset between mouse and image
+  offsetX = mouseX - rect.left;
+  offsetY = mouseY - rect.top;
+
+  // Set the dragging flag to true
+  dragging = true;
+}
+
+// Define a function to stop dragging
+function stopDrag() {
+  // Set the dragging flag to false
+  dragging = false;
+}
+
+// Define a function to drag the image
+function drag(e) {
+  // Check if dragging is true
+  if (dragging) {
+    // Get the current mouse position
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    // Calculate the new image position by subtracting the offset
+    var newX = mouseX - offsetX;
+    var newY = mouseY - offsetY;
+
+    // Set the new image position
+    tool.style.left = newX + "px";
+    tool.style.top = newY + "px";
+    
+    // Prevent default behavior of mouse move event
+    e.preventDefault();
+    
+    // Remove the gravity class if present
+    tool.classList.remove("gravity");
+    
+    // Add an event listener for click event
+    tool.addEventListener("click", toggleGravity);
+    
+    // Define a function to toggle the gravity class on click
+    function toggleGravity() {
+      // Check if the image has the gravity class
+      if (tool.classList.contains("gravity")) {
+        // Remove it if it does
+        tool.classList.remove("gravity");
+      } else {
+        // Add it if it doesn't
+        tool.classList.add("gravity");
+      }
+      
+      // Remove the event listener after toggling
+      tool.removeEventListener("click", toggleGravity);
+    }
+    
+   }
+}
+
+// Define a function to generate a random number between min and max values
+function getRandom(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Define a function to set random values for top and left properties of the image
+function setRandomPosition() {
+  
+   // Get the window width and height
+   var windowWidth = window.innerWidth;
+   var windowHeight = window.innerHeight;
+
+   // Get the image width and height
+   var toolWidth = tool.offsetWidth;
+   var toolHeight = tool.offsetHeight;
+
+   // Calculate the maximum possible values for top and left properties
+   var maxTop = windowHeight - toolHeight;
+   var maxLeft = windowWidth - toolWidth;
+
+   // Generate random values for top and left properties within the range of [0, max]
+   var randomTop = getRandom(0, maxTop);
+   var randomLeft = getRandom(0, maxLeft);
+
+   // Set custom CSS variables for top and left properties
+   document.documentElement.style.setProperty("--random-top", randomTop + "px");
+   document.documentElement.style.setProperty("--random-left", randomLeft + "px");
+}
+
+// Call the function when the window loads or resizes
+window.addEventListener("load", setRandomPosition);
+window.addEventListener("resize", setRandomPosition);
+</script>
+  </head>
+<head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
