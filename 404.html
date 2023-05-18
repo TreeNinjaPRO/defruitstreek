@@ -1,8 +1,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <img src="../textures/site_placeholder_back.png" alt="Button" id="button">
-<img src="../textures/site_placeholder_extra.svg" alt="Extra" id="repair-tool" height="80px" style="z-index: 2;">  <style>
+<a href=“javascript:history.back()”> <img src=“…/textures/site_placeholder_back.png” alt=“Button” id=“button” style=“z-index: 2;”> </a><img src="../textures/site_placeholder_extra.svg" alt="Extra" id="repair-tool" height="80px" style="z-index: 2;">  <style>
     .site_placeholder_btn {
   height: 75px;
   width: auto;
@@ -200,14 +199,7 @@ window.addEventListener("resize", setRandomPosition);
   </style>
 </head>
 <body>
-  <img src="../textures/site_placeholder.png" alt="Site placeholder">
-  <style>
-    @media screen and (max-width: 600px) {
-      img {
-        /* Change the image source to site_placeholder_b.png */
-        content: url("../textures/site_placeholder_b.png");
-      }
-    }
-  </style>
+<img src="../textures/site_placeholder.png" alt="Site placeholder" id="site_placeholder_attribute">
+<style> @media screen and (max-width: 600px) { #site_placeholder_attribute { content: url("../textures/site_placeholder_b.png"); } } </style>
 </body>
 </html>
