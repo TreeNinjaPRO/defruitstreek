@@ -1,13 +1,15 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<a href=“javascript:history.back()”> <img src=“…/textures/site_placeholder_back.png” alt=“Button” id=“button” style=“z-index: 2;”> </a><img src="../textures/site_placeholder_extra.svg" alt="Extra" id="repair-tool" height="80px" style="z-index: 2;">  <style>
+<a href="javascript:history.back()"> <img src="…/textures/site_placeholder_back.png" alt="Button" id="button" style="z-index: 2;"> </a>
+  <img src="../textures/site_placeholder_extra.svg" alt="Extra" id="repair-tool" height="80px" style="z-index: 2;">  <style>
     .site_placeholder_btn {
   height: 75px;
   width: auto;
 }
 
 @media (max-width: 600px) {
+   #repair-tool { /* Make the image disappear */ display: none;
   /* This image shows up in the top left corner of the screen for when @media is below 600px for phones */
   .site_placeholder_btn {
     position: absolute;
