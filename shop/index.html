@@ -1,0 +1,99 @@
+<html>
+<head>
+
+</head>
+<body>
+  
+<div class="store-intro-card" style="position: fixed; right: 0; top:150px; font-family: ProximaSans, sans-serif;"> <!-- Voegde de font-family hier toe -->
+      <div class="store-intro-font-size">10px</div>
+      <div class="store-intro-title">Vers van de Betuwe</div>
+      <div class="store-intro-description">De Fruitstreek heeft een verscheidene diversiteit aan vele producten om lokale voedselproducten te ondersteunen.</div>
+      <div class="store-intro-button-container"> <!-- Voegde knoppen container toe -->
+        <a href="#" class="store-intro-button store-intro-button-green">Bekijk de producten</a>
+        <a href="#" class="store-intro-button store-intro-button-white">Bedrijven</a>
+      </div>
+    </div>
+  
+</body>
+  <style>
+    /* Achtergrond stijlen */
+    body {
+      background-image: url("/textures/store-intro.png");
+      background-position: center;
+      background-size: cover; /* Voegde deze toe om de afbeelding responsief te maken */
+      margin: 0;
+    }
+
+    /* Glassmorphism kaart effect */
+    .store-intro-card {
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background-color: rgba(255, 255, 255, 0.75);
+      border-radius: 10px;
+      border: 1px solid rgba(209, 213, 219, 0.3);
+      width: 40%;
+      height: 400px;
+    }
+
+    /* Titel en beschrijving stijlen */
+    .store-intro-title {
+      font-size: xx-large;
+      margin: 20px;
+    }
+
+    .store-intro-description {
+      font-size: large;
+      margin: 20px;
+    }
+
+    /* Lettergrootte indicator */
+    .store-intro-font-size {
+      font-size: x-small;
+      margin-left: 20px;
+      margin-top: 15px; /* Veranderde deze om de tekst iets naar beneden te verplaatsen */
+    }
+
+    /* Media query voor kleinere schermen */
+    @media (max-width: 600px) {
+      .store-intro-card {
+        width: 85%;
+        margin-left: 20px;
+        margin-right: 20px;
+        height: auto;
+      }
+    }
+
+    /* Glassmorphism knoppen stijlen */
+    .store-intro-button {
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-radius: 10px;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .store-intro-button-green {
+      background-color: rgba(52, 211, 153, 0.75);
+      color: white;
+    }
+
+    .store-intro-button-white {
+      background-color: rgba(255, 255, 255, 0.75);
+      color: black;
+      margin-right: 20px; 
+    }
+
+    .store-intro-button:hover {
+      opacity: 0.8;
+    }
+
+    /* Knoppen container stijlen */
+    .store-intro-button-container {
+      display: flex; 
+      align-items: center; 
+      margin-left: 20px; 
+    }
+  </style>
+</html>
