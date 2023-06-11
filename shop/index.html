@@ -3,24 +3,22 @@
 
 </head>
 <body>
-  
-<div class="store-intro-card" style="position: fixed; right: 0; top:150px; font-family: ProximaSans, sans-serif;"> <!-- Voegde de font-family hier toe -->
-      <div class="store-intro-font-size">10px</div>
+<div class="store-intro" style="background-image: url('/textures/store-intro.png'); background-position: center; background-size: cover; height: 500px;">
+<div class="store-intro-card" style="position: absolute; font-family: ProximaSans, sans-serif; top: 150px; right: 10px; display: block;">  <div class="store-intro-font-size">BESCHRIJVING</div>
       <div class="store-intro-title">Vers van de Betuwe</div>
       <div class="store-intro-description">De Fruitstreek heeft een verscheidene diversiteit aan vele producten om lokale voedselproducten te ondersteunen.</div>
       <div class="store-intro-button-container"> <!-- Voegde knoppen container toe -->
-        <a href="#" class="store-intro-button store-intro-button-green">Bekijk de producten</a>
-        <a href="#" class="store-intro-button store-intro-button-white">Bedrijven</a>
+        <a href="#" class="store-intro-button store-intro-button-green" style="text-decoration: none">Bekijk de producten</a>
+        <a href="#" class="store-intro-button store-intro-button-white" style="text-decoration: none">Bedrijven</a>
+</div>
       </div>
     </div>
-  
+  </div>
+
 </body>
   <style>
     /* Achtergrond stijlen */
     body {
-      background-image: url("/textures/store-intro.png");
-      background-position: center;
-      background-size: cover; /* Voegde deze toe om de afbeelding responsief te maken */
       margin: 0;
     }
 
@@ -32,6 +30,8 @@
       border-radius: 10px;
       border: 1px solid rgba(209, 213, 219, 0.3);
       width: 40%;
+      top: 150px
+      right: -10px;
       height: 400px;
     }
 
