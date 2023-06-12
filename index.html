@@ -50,13 +50,18 @@ Allerlei onderwerpen zijn er te ontdekken over de Betuwe, zoals mooie fietsroute
 <div class="media-play-div" style="left: 70%;"><img src="/textures/media_play.png" alt="Play video" class="media-play-btn"></div>
 </div>
 <style>
+    
 /* fruit-2 */
     .fruit-2 {
       display: flex; /* added display:flex */
       position: absolute;
       background-image: url("/textures/site_placeholder.png");
     }
-
+@media (max-width: 550px) {
+  .intro-card {
+    width: 95%;
+  }
+}
     .fruit-glass {
       backdrop-filter: blur(16px) saturate(180%);
       -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -70,12 +75,12 @@ Allerlei onderwerpen zijn er te ontdekken over de Betuwe, zoals mooie fietsroute
 
     .fruit-glass h1 {
       margin-top: 20px;
-      margin-left: 20px;
+      margin-left: 50px;
     }
 
     .fruit-glass p {
       margin-top: 20px;
-      margin-left: 20px;
+      margin-left: 50px;
       margin-bottom: 20px;
       width: 75%;
     }
@@ -137,7 +142,7 @@ Allerlei onderwerpen zijn er te ontdekken over de Betuwe, zoals mooie fietsroute
        .fruit-glass {
          width: 100%;
          text-align:center;
-         margin-left:auto; 
+         margin-left: 20px; 
          margin-right:auto; 
          display:block; 
          margin-bottom:auto; 
@@ -155,12 +160,17 @@ Allerlei onderwerpen zijn er te ontdekken over de Betuwe, zoals mooie fietsroute
          -sand-transform:none !important
         }
         .fruit-glass p {
+         margin-left: 20px; 
           width:90%;
         }
         .media-play-div {
           display:none;
         }
      }    
+        .fruit-glass h1 {
+      margin-top: 0px;
+      margin-left: 20px;
+    }
 /* fruit-2 */
 
 </style>
