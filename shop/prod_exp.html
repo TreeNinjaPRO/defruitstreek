@@ -14,21 +14,43 @@
 
       @media only screen and (max-width: 600px) {
         .shop-opt {
+          position: absolute;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
           width: 100%;
           height: 80%;
           z-index: 11;
-          position: relative;
-          display: inline-block;
-          margin-left: auto;
-          margin-right: auto;
           border-radius: none;
         }
+      }
+
+      .shop-opt::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.75);
+        filter: blur(16px);
+      }
+
+      .shop-opt-content {
+        position: relative;
+        z-index: 4;
       }
     </style>
   </head>
   <body>
-    <div class="shop-opt" style="background-color: rgba(255, 255, 255, 0.75); filter: blur(16px); z-index: 3;">
-      <p>Voeg hier je inhoud toe</p>
+    <div class="shop-opt">
+      <div class="shop-opt-content">
+        <p>Voeg hier je inhoud toe</p>
+      </div>
+    </div>
+
+    <div class="other-element">
+      <p>Voeg hier je andere inhoud toe</p>
     </div>
   </body>
 </html>
