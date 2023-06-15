@@ -2,7 +2,7 @@
         <div class="sidepane-title" style="display:flex; flex-direction:row; align-items:center; margin-bottom: 5px; justify-content:center;">
             <h1 style="font-size: x-large; text-align:center;">Welkom in de Betuwe</h1>
             <img src="/textures/underline.png" alt="underline" style="height:25px; margin-left:75px;">
-            <span id="close-button" onclick="hideSidepane()">×</span>
+            <span id="close-button" onclick="hideSidepane()" style="color:black;">×</span>
         </div>
 <div class="sidepane-content" style="display:flex; flex-direction:column; align-items:flex-start; margin-left: 20px; margin-right: 20px;">
             <p style="font-size: medium; text-align:left;">Een prachtige Nederlandse streek met fruitteelt, fietsgebieden en waterlandschappen & meer.</p>
@@ -10,7 +10,7 @@
         </div>
     </div>
 
-<button id="filter-button" onclick="showSidepane()" style="display:none;">Filteren</button>
+<button id="filter-button" onclick="showSidepane()" style="display:none;"><span id="menu-icon">•••</span> Filteren</button>
 
 <script>
 function showSidepane() {
@@ -53,29 +53,40 @@ function hideSidepane() {
         left:10px;
         width:80px;
         height:40px;
-        background-color:#6AA343;
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color:#007bff;
         color:white;
-        font-size:x-large;
+        font-size:16px;
         text-align:center;
         line-height:40px;
         border-radius:12px;
         border:none;
     }
 
+    #menu-icon {
+        color:white;
+        margin-right:5px;
+    }
+
     #close-button {
-        display:flex;
+        display:relative;
         width:40px;
         height:40px;
         font-size:x-large;
         text-align:center;
         line-height:40px;
-        color:white;
+        color:black;
         margin-left:25px;
         backdrop-filter: blur(16px) saturate(180%);
         -webkit-backdrop-filter: blur(16px) saturate(180%);
         background-color: rgba(255, 255, 255, 0.75);
         border-radius: 12px;
         border: 1px solid rgba(209, 213, 219, 0.3);
+    }
+
+    .sidepane-title {
+       flex-direction:column;
     }
 
     @keyframes slide-up {
@@ -93,6 +104,10 @@ function hideSidepane() {
     #sidepane {
         display:relative;
         margin-left:200px;
+    }
+
+    #filter-button {
+       display:none;
     }
 
     #close-button {
