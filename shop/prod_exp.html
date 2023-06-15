@@ -10,7 +10,7 @@
         </div>
     </div>
 
-<button id="filter-button" onclick="showSidepane()" style="display:none;"><span id="menu-icon">•••</span> Filteren</button>
+<button id="filter-button" onclick="showSidepane()"><span id="menu-icon">•••</span> Filteren</button>
 
 <script>
 function showSidepane() {
@@ -39,7 +39,7 @@ function hideSidepane() {
     #sidepane {
         z-index: 10;
         height: 85%;
-        width: 95%;
+        width: 100%;
         display:none;
         bottom:-105%;
         animation-duration: 0.5s;
@@ -49,7 +49,7 @@ function hideSidepane() {
     #filter-button {
         display:block;
         position:absolute;
-        top:10px;
+        top:100px;
         left:10px;
         width:80px;
         height:40px;
