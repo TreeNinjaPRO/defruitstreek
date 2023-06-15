@@ -14,30 +14,220 @@
       </div>
     </div>
   </div>
-<div class="showContainer" id="showContainer" style="height: 275px; display: none;"> <!-- Add a display style to the div to make it invisible and take no space -->
-  <div class="shop_mob_pres">
-    <img src="https://treeninjapro.github.io/defruitstreek/textures/site_placeholder.png" alt="1" style="width: 100%; height: 100%; object-fit: cover;">
-    <img src="https://treeninjapro.github.io/defruitstreek/textures/site_placeholder.png" alt="2" style="width: 100%; height: 100%; object-fit: cover;">
-    <img src="https://treeninjapro.github.io/defruitstreek/textures/site_placeholder.png" alt="3" style="width: 100%; height: 100%; object-fit: cover;">
+<div class="wrapper">
+  <div class="grid-container">
+    <a href="#"><img src="/textures/media_placeholder.png" class="grid-item grid-item-1" alt="image1"></a>
+    <a href="#"><img src="/textures/media_placeholder.png" class="grid-item grid-item-1" alt="image2"></a>
   </div>
-  <div class="dots">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-  <div class="left-triangle">
-    <svg width="24" height="24" viewBox="0 0 24 24">
-      <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
-    </svg>
-  </div>
-  <div class="right-triangle">
-    <svg width="24" height="24" viewBox="0 0 24 24">
-      <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
-    </svg>
+  
+  <div class="list-container">
+    <a href="#"><img src="/textures/media_placeholder.png" class="list-item" alt="image3"></a>
+    <a href="#"><img src="/textures/media_placeholder.png" class="list-item" alt="image4"></a>
+    <a href="#"><img src="/textures/media_placeholder.png" class="list-item" alt="image5"></a>
   </div>
 </div>
+
+ 
+
+<h1>Categorieën</h1>
+
+<div class="sorts">
+  
+   <a href="#"><div class="card">
+     <img src="/textures/placeholder.png" class="icon" alt="chocolade">
+     <p class="title">CHOCOLADE</p>
+   </div></a>
+   
+   <a href="#"><div class="card">
+     <img src="/textures/placeholder.png" class="icon" alt="drank">
+     <p class="title">DRANK</p>
+   </div></a>
+   
+   <a href="#"><div class="card">
+     <img src="/textures/placeholder.png" class="icon" alt="fruit">
+     <p class="title">FRUIT</p>
+   </div></a>
+   
+   <a href="#"><div class="card">
+     <img src="/textures/placeholder.png" class="icon" alt="honing">
+     <p class="title">HONING</p>
+   </div></a>
+   
+   <a href="#"><div class="card">
+     <img src="/textures/placeholder.png" class="icon" alt="jam">
+     <p class="title">JAM</p>
+   </div></a>
+   
+   <a href="#"><div class="card">
+     <img src="/textures/placeholder.png" class="icon" alt="merchandise">
+     <p class="title">MERCHANDISE</p>
+   </div></a>
+   
+   <a href="#"><div class="card">
+     <img src="/textures/placeholder.png" class="icon" alt="olie & azijn">
+     <p class="title">OLIE & AZIJN</p>
+   </div></a>
+   
+   <a href="#"><div class="card">
+     <img src="/textures/placeholder.png" class="icon" alt="pakketten">
+     <p class="title">PAKKETTEN</p>
+   </div></a>
+   
+   <a href="#"><div class="card">
+     <img src="/textures/placeholder.png" class="icon" alt="sap">
+     <p class="title">SAP</p>
+   </div></a>
+   
+   <a href="#"><div class="card">
+     <img src="/textures/placeholder.png" class="icon" alt="stroop">
+     <p class="title">STROOP</p>
+   </div></a>
+  
+</div>
+      
 </body>
   <style>
+         .sorts {
+    display: flex;
+    width: 70%;
+    height: 120px; /* Ik heb de hoogte van de horizontale lijst toegevoegd. */
+    margin: 0 auto;
+    overflow-x: auto;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    backdrop-filter: blur(16px);
+  }
+
+  .card {
+    width: 100px;
+    height: 100px;
+    margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    backdrop-filter: blur(16px);
+    
+    /* Ik heb het hover effect toegevoegd. */
+    
+    transition: transform 0.3s, opacity 0.3s;
+    
+  }
+  
+   .card:hover {
+     transform: scale(1.1);
+     opacity: 0.8;
+   }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 8px;
+    
+    /* Ik heb de tekstkleur en de tekstdecoratie aangepast. */
+    
+    color: black;
+    text-decoration: none;
+    
+  }
+
+  @media (max-width: 600px) {
+    .sorts {
+      width: calc(100% - (100vw / (5 * (5 -1))) *2); /* Ik heb de breedte van de horizontale lijst aangepast om rekening te houden met de marge links en rechts. */
+      margin-left: calc(100vw / (5 * (5 -1)));
+      margin-right: calc(100vw / (5 * (5 -1)));
+      /* Ik heb de marge links en rechts gedefinieerd als px. */
+      
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(2, auto);
+      height: calc((100vw / (5 * (5 -1))) *1.2); /* Ik heb de hoogte van de horizontale lijst aangepast op basis van de schermbreedte. */
+      
+    }
+
+    .card {
+      width: calc(100vw / (5 * (5 -1)));
+      height: calc(100vw / (5 * (5 -1)));
+      margin-right: calc(100vw / (5 * (5 -1)));
+      font-size: calc(100vw / (5 * (5 -1)));
+      border-radius: calc(100vw / (5 * (5 -1)));
+      border-width: calc(100vw / (5 * (5 -1)));
+      backdrop-filter-blur-radius = calc(100vw / (5 * (5 -1)));
+      icon-width = calc(100vw / (5 * (5 -1)));
+      icon-height = calc(100vw / (5 * (5 -1)));
+      title-margin-top = calc(100vw / (5 * (5 -1)));
+      
+      /* Ik heb de bovenstaande berekeningen gemaakt om de kaartjes responsief te maken op de telefoon. Je kunt ze aanpassen naar je eigen voorkeur. */
+      
+    }
+    
+     h1 {
+       font-size: 24px; /* Ik heb de tekstgrootte van de titel gedefineerd. */
+       margin-left: calc(100vw / (5 * (5 -1)));
+     }
+     
+     /* Ik heb de h1 titel ook responsief gemaakt op de telefoon. Je kunt dit ook aanpassen naar je eigen voorkeur. */
+        
+        .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 200px;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    width: 60%;
+    margin: 0 auto;
+    grid-auto-flow: dense;
+  }
+
+  .grid-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .grid-item-1 {
+    grid-column: span 2;
+    height: 200px;
+  }
+
+  @media (max-width: 600px) {
+    .grid-container {
+      width: 100%;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(2, auto);
+    }
+
+    .grid-item-1 {
+      grid-column: span 1;
+      height: 50vw;
+    }
+  }
+
+  .list-container {
+    display: flex;
+    width: 900px;
+    margin: 16px auto;
+    overflow-x: auto;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+  }
+
+  .list-item {
+    width: 300px;
+    height: 150px;
+    margin-right: 16px;
+    object-fit: cover;
+  }
     /* Achtergrond stijlen */
     body {
       margin: 0;
@@ -124,152 +314,11 @@
       align-items: center; 
       margin-left: 20px; 
     }
-@media screen and (min-width: 600px) {
-  #showContainer {
-    display: none; /* Change the display style to none */
-  }
-}
-.showContainer {
-  width: 80%; /* Change the width to 80% */
-  height: 416px;
-  border: 1px solid rgba(209, 213, 219, 0.3); /* Change the border style */
-  background-color: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(16px); /* Change the blur amount */
-  border-radius: 10px;
-  box-shadow: none; /* Remove the shadow */
-  margin: 50px auto;
-  position: relative;
-  overflow: hidden;
-  &:hover .left-triangle, &:hover .right-triangle{
-    visibility: visible;
-  }
-}
-.container {
-  width: 9999px;
-  position: absolute;
-  left: calc(50% - (9999px / 2)); /* Center the container horizontally */
-  > img {
-    display: block;
-    float: left;
-    object-fit: cover;
-    border-radius: inherit;
-    box-shadow: inset -4px -4px 8px rgba(255,255,255,0.2), inset -4px -4px 8px rgba(0,0,0,0.2);
-    transition: transform .3s;
-    &:hover {
-      transform: scale(1.05);
-    }
-    
-  }
-}
-.left-triangle, .right-triangle {
-  visibility: hidden;
-  position: absolute;
-  top: calc(50% - 40px); /* Center the triangles vertically */
-  cursor: pointer;
-  left: -10px; 
-  transform: rotate(0);
-  width: 80px; /* Make the triangles smaller */
-  height: 80px; 
-}
-.right-triangle {
-  left: auto;
-  right: -10px; 
-  transform: rotate(-180deg);
-}
-div > svg {
- fill: white; /* Change the triangle color to white */
-}
+
+
+
   </style>
 <script>
-function slideShow () {
-  const showContainer = document.getElementsByClassName('showContainer')[0],
-     container = document.getElementsByClassName('container')[0],
-     imgNum = container.children.length,
-     oneImgWidth = container.children[0].offsetWidth,
-     leftTriangle = document.getElementsByClassName('left-triangle')[0],
-     rightTriangle = document.getElementsByClassName('right-triangle')[0],
-     dots = document.getElementsByClassName('dots')[0].children
-  let index = 0
-  container.style.left = '0px'
-  
-  function movement(offset) {
-    const oldLeft = parseInt(container.style.left)
-    container.style.left = oldLeft + offset + 'px'
-  }
 
-  function showDots(target) {
-    for (let i = 0; i < dots.length; i++) {
-      if (i !== target) {
-        dots[i].style.backgroundColor = 'orange'
-      } else {
-        dots[i].style.backgroundColor = 'red'
-      }
-    }
-  }
-  
-  function autoRollImg() {
-    function rollAuto() {
-      timer = setInterval(function() {
-        index++
-        if (index > imgNum - 1) {
-          index = 0
-        }
-        showDots(index)
-        movement(-oneImgWidth)
-        if (parseInt(container.style.left) <= -imgNum * oneImgWidth) {
-            container.style.left = '0px'
-        }
-      }, 800)
-    }
-    rollAuto()
-    showContainer.onmouseenter = function() {
-      clearInterval(timer)
-    }
-    showContainer.onmouseleave = function() {
-      rollAuto()
-    }
-  }
-
-  function clickTriangle() {
-    leftTriangle.onclick = function() {
-      if (parseInt(container.style.left) >= 0) {
-        container.style.left = -(imgNum - 1) * oneImgWidth + 'px'
-      } else {
-        movement(oneImgWidth)
-      }
-      index = index - 1
-      if (index < 0) {
-        index = imgNum - 1
-      }
-      showDots(index)
-    }
-    rightTriangle.onclick = function() {
-      if (parseInt(container.style.left) <= -(imgNum - 1) * oneImgWidth) {
-        container.style.left = '0px'
-      } else {
-        movement(-oneImgWidth)
-      }
-      index = index + 1
-      if (index > imgNum - 1) {
-        index = 0
-      }
-      showDots(index)
-    }
-  }
-  
-  function clickDots() {
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].onclick = function() {
-        container.style.left = -i * oneImgWidth + 'px'
-        showDots(i)
-      }
-    }
-  }
-  clickTriangle()
-  clickDots()
-  autoRollImg()
-}
-
-window.onload = slideShow
 </script>
 </html>
