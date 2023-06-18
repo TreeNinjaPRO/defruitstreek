@@ -111,6 +111,7 @@
   .searchbox {
     position: fixed;
     top: 80px; /* This will make the search box 80px below the top of the screen */
+    margin-left: 20px; /* This will make the search box 20px to the left of the right edge of the screen */
     right: 20px; /* This will make the search box 20px to the left of the right edge of the screen */
     width: 600px; /* This will make the search box 600px wide */
     height: 360px;
@@ -204,8 +205,8 @@
         }
         .searchbox {
       position: fixed;
-      top: 80px; // This will make the search box 80px below the top of the screen
-      right: 0; // This will make the search box aligned to the right of the screen
+      top: 80px;
+      right: 20px;
       width: 400px;
       height: 360px;
       background: rgba(0, 0, 0, 0.25);
@@ -223,7 +224,7 @@
       
     .searchbox {
         position: absolute;
-        width: calc(100% - margin-left - margin-right); // Adjust this according to your desired margins
+        width: 95%
         height: calc(100% - margin-top - margin-bottom); // Adjust this according to your desired margins
         left: margin-left; // Adjust this according to your desired margins
         right: margin-right; // Adjust this according to your desired margins
