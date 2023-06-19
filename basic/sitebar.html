@@ -140,19 +140,7 @@
     background-color: rgba(0,0,0,0.5);
   }
   
-  @media screen and (max-width: 768px) { /* This will apply the following styles only on mobile devices */
-    .searchbox {
-      width: calc(100% - 40px); /* This will make the search box fill the width of the screen minus 40px */
-      right: 20px; /* This will keep the search box aligned to the right of the screen with a margin of 20px */
-      height: auto; /* This will make the search box adjust its height according to its content */
-      border-radius: 10px; /* This will make the search box have smaller rounded corners */
-    }
-    
-    #search-iframe {
-      border-radius: 10px; /* This will make the iframe have smaller rounded corners */
-      height: auto; /* This will make the iframe adjust its height according to its content */
-    }
-  }
+
 </style>      
     <style>
     .nav-link {
@@ -224,8 +212,8 @@
       
     .searchbox {
         position: absolute;
-        width: 95%
-        height: calc(100% - margin-top - margin-bottom); // Adjust this according to your desired margins
+        width: 95%;
+        height: 360px;
         left: margin-left; // Adjust this according to your desired margins
         right: margin-right; // Adjust this according to your desired margins
         top: margin-top; // Adjust this according to your desired margins
