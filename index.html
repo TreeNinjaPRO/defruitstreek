@@ -702,3 +702,131 @@ Allerlei onderwerpen zijn er te ontdekken over de Betuwe, zoals mooie fietsroute
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add this to remove the margin and padding from the sitebottom body */
+    .sitebottom-body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    #site-bottom-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: black;
+      color: white;
+      width: 100%;
+      z-index: 8;
+    }
+
+    #site-bottom-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .site-bottom-name {
+      margin-top: 10px;
+    }
+
+    #site-bottom-right {
+      display: flex;
+    }
+
+    .site-bottom-menu {
+      list-style: none;
+      display: flex;
+    }
+
+    .site-bottom-menu-item {
+      margin-right: 20px;
+    }
+
+    .site-bottom-menu-item p {
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      #site-bottom-container {
+        flex-direction: column;
+        align-items: center; /* add this to center the elements */
+      }
+      
+      #site-bottom-left {
+        flex-direction: row; /* change this to place the name next to the logo */
+        justify-content: center; /* add this to center the logo and name */
+        margin-bottom: 10px; /* add this to create some space below the logo and name */
+      }
+      
+      #site-bottom-right {
+        flex-direction: column; /* change this to stack the menu items vertically */
+        align-items: center; /* add this to center the menu items */
+      }
+      
+      .site-bottom-menu-item {
+        margin-right: 0px; /* remove this to avoid extra space on the right */
+        margin-bottom: 10px; /* add this to create some space below each menu item */
+      }
+    }
+    
+    /* Add this to remove the default link style */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body class="sitebottom-body">
+  <!-- sitebottom -->
+  <div id="site-bottom-container">
+    <div id="site-bottom-left">
+      <img src="/textures/fs_logo.png" alt="Fruitstreek logo" width="100px">
+      <p class="site-bottom-name">DE FRUITSTREEK.NL</p>
+    </div>
+    <div id="site-bottom-right">
+<ul class="site-bottom-menu">
+        <li class="site-bottom-menu-item">
+          <h1>Webshop</h1><a href="/shop/"><p>Webshop</p></a></li>
+        <li class="site-bottom-menu-item">
+          <h1>Betuwe</h1><a href="/betuwe/"><p>Betuwe</p></a>
+          <ul class="nav-submenu">
+                <li><a href="/betuwe/cultuur/" class="nav-sublink">Cultuur</a></li>
+                <li><a href="/betuwe/vruchten/" class="nav-sublink">Vruchten</a></li>
+                <li><a href="/betuwe/bloesem/" class="nav-sublink">Bloesem</a></li>
+                <li><a href="/betuwe/waterschappen/" class="nav-sublink">Waterschappen</a></li>
+                <li><a href="/betuwe/gebieden/" class="nav-sublink">Gebieden</a></li>
+            </ul>
+        </li>
+        <li class="site-bottom-menu-item">
+          <h1>Routes</h1><a href="/routes/"><p>Routes</p></a>
+          <ul class="nav-submenu">
+                <li><a href="/routes/fietsen/" class="nav-sublink">Fietsen</a></li>
+                <li><a href="/routes/wandelen/" class="nav-sublink">Wandelen</a></li>
+                <li><a href="/routes/varen/" class="nav-sublink">Varen</a></li>
+            </ul>
+        </li>
+        <li class="site-bottom-menu-item">
+          <h1>Doen</h1><a href="/doen/"><p>Doen</p></a>
+          <ul class="nav-submenu">
+                <li><a href="/doen/evenementen/" class="nav-sublink">Evenementen</a></li>
+                <li><a href="/doen/huurvervoer/" class="nav-sublink">Huurvervoer</a></li>
+                <li><a href="/doen/poi/" class="nav-sublink">Locaties (POI)</a></li>
+                <li><a href="/doen/kaart/" class="nav-sublink">Kaart</a></li>
+            </ul>
+        </li>
+        <li class="site-bottom-menu-item"><h1>Meer
+          </h1><a href="/meer/"><p>Meer</p></a>
+          <ul class="nav-submenu">
+                <li><a href="/meer/contact" class="nav-sublink">Contact</a></li>
+                <li><a href="/meer/over" class="nav-sublink">Over</a></li>
+            </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
